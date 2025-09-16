@@ -3,7 +3,6 @@ package io.github.ricardoandradem.cadcar.user.controller;
 import io.github.ricardoandradem.cadcar.user.dto.RoleDTO;
 import io.github.ricardoandradem.cadcar.user.dto.UserRegisterDTO;
 import io.github.ricardoandradem.cadcar.user.dto.UserResponseDTO;
-import io.github.ricardoandradem.cadcar.user.model.Role;
 import io.github.ricardoandradem.cadcar.user.service.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
