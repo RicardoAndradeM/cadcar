@@ -3,7 +3,7 @@ package io.github.ricardoandradem.cadcar.user.dto;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 
-public record UserRegisterDTO(
+public record UserCreateDTO(
 
         @NotBlank
         String name,

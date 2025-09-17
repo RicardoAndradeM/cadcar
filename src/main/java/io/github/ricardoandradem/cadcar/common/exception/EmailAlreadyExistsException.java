@@ -1,4 +1,4 @@
-package io.github.ricardoandradem.cadcar.user.exception;
+package io.github.ricardoandradem.cadcar.common.exception;
 
 public class EmailAlreadyExistsException extends RuntimeException {
     public EmailAlreadyExistsException(String message) {
