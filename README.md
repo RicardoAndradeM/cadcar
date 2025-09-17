@@ -60,6 +60,16 @@ export JWTSECRET=<seu_jwt_secret>
 ./gradlew bootRun
 ```
 
+## 🙋‍♂️ Usuarios inicias 
+Para facilitar os testes, dois usuários são cadastrados previamente no banco de dados.
+
+Essas são as credenciais:
+| Nome      | Email               | Senha            |
+|-----------|---------------------|------------------|
+| root      | root@email.com      | rootPassword     |
+| operator1 | operator1@email.com | operatorPassword |
+
+
 ## 📜 Swagger
 
 Quando a aplicação está em execução, a documentação Swagger fica disponível em: http://localhost:8080/swagger-ui/index.html
