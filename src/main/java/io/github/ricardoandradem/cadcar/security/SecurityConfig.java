@@ -3,6 +3,7 @@ package io.github.ricardoandradem.cadcar.security;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -31,6 +32,12 @@ public class SecurityConfig {
                         .requestMatchers("/h2-console/**", "/v3/api-docs/**", "/swagger-ui/**").permitAll()
                         .requestMatchers("/api/login").permitAll()
                         .requestMatchers("/api/user/**").hasRole("ADMIN")
+                        .requestMatchers("/api/client/**").hasAnyRole("ADMIN","OPERATOR")
+                        .requestMatchers(HttpMethod.GET, "/api/brand").permitAll()
+                        .requestMatchers("/api/brand/**").hasAnyRole("ADMIN","OPERATOR")
+                        .requestMatchers(HttpMethod.GET, "/api/model").permitAll()
+                        .requestMatchers("/api/model/**").hasAnyRole("ADMIN","OPERATOR")
+                        .requestMatchers("/api/vehicle/**","/api/client/*/vehicle").hasAnyRole("ADMIN","OPERATOR")
                         .anyRequest().authenticated()
                 )
                 .headers(headers -> headers.frameOptions(HeadersConfigurer.FrameOptionsConfig::sameOrigin))

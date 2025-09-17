@@ -16,10 +16,10 @@ import org.springframework.web.bind.annotation.RestController;
 @AllArgsConstructor
 public class LoginController {
 
-    private LoginService loginService;
+    private final LoginService loginService;
 
     @PostMapping
-    public ResponseEntity<TokenDTO> loginRequestDTO(@RequestBody LoginRequestDTO loginRequestDTO) {
+    public ResponseEntity<TokenDTO> login(@RequestBody LoginRequestDTO loginRequestDTO) {
         return new ResponseEntity<>(loginService.login(loginRequestDTO), HttpStatus.CREATED);
     }
 }
